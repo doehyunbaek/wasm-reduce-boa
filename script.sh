@@ -6,4 +6,4 @@ if [ -z "$BINARYEN_ROOT" ]; then
     exit 1
 fi
 
-wasm-reduce -to 60 -b $BINARYEN_ROOT/bin '--command=./oracle.py ./test.wasm' -t ./test.wasm -w ./work.wasm ./boa.wasm
+timeout 3600s wasm-reduce -to 60 -b $BINARYEN_ROOT/bin '--command=./oracle.py ./test.wasm' -t ./test.wasm -w ./work.wasm ./boa.wasm
